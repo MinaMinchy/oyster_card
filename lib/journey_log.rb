@@ -9,12 +9,13 @@ class JourneyLog
     @start = station
     @in_journey = true
     journey_history
+      p "journey history looks like- #{journey_history}"
       p "current journey looks like- #{current_journey}"
   end
 
   def finish(station2)
-    @finsih = station2
-      p "station2 is saved as #{@finsih}"
+    @finish = station2
+      p "station2 is saved as #{@finish}"
     journey_history
       p "journey history looks like- #{journey_history}"
     @in_journey = false
@@ -24,8 +25,8 @@ class JourneyLog
 
   def journey_history
     journey = {start: @start, finish: @finish}
-    @journeys << journey unless @in_journey
-    @journeys.dup
+    @journeys << journey if @in_journey == nil
+    # @journeys.dup
   end
 
 private
@@ -33,7 +34,6 @@ private
     @in_journey ||= journey_class.new
   end
 end
-
 
 # log = JourneyLog.new
 # aldgate = Station.new("Aldgate", 2)
