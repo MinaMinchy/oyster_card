@@ -7,7 +7,7 @@ describe Journey do
   it "has a station set on creation" do
     station_double = double(:name => "Vic", :zone => 1)
     journey = Journey.new(station_double)
-    expect(journey.station).to eq station_double
+    expect(journey.entry).to eq station_double
   end
 
   it "charges the minimum balance" do
@@ -32,7 +32,7 @@ describe Journey do
   it "starts a journey" do
     station_double = double(:name => "Vic", :zone => 1)
     journey = Journey.new(station_double)
-    expect(journey.station).to eq station_double
+    expect(journey.entry).to eq station_double
   end
 
   it "finishes a journey" do

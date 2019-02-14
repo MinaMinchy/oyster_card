@@ -1,9 +1,9 @@
 class Journey
 
-  attr_reader :station, :exit
+  attr_reader :entry, :exit
 
-  def initialize(station)
-    @station = station
+  def initialize(entry)
+    @entry = entry
     @fare = 0
   end
 
@@ -13,12 +13,12 @@ class Journey
   end
 
   def complete?
-    return false if @station.nil?
+    return false if @entry.nil?
     true
   end
 
   def fare
-    return 6 if (@station.nil? or @exit.nil?)
+    return 6 if (@entry.nil? or @exit.nil?)
     1
   end
 
